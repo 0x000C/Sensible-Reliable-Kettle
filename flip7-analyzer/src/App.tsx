@@ -7,6 +7,11 @@ import {
   expectedValueStrategy,
   contextAwareStrategy,
   aggressiveStrategy,
+  riskAverseStrategy,
+  highValueHunterStrategy,
+  deckDepletionStrategy,
+  flip7ChaserStrategy,
+  cardDistributionStrategy,
 } from './strategies'
 import arenaResults from './data/arena-results.json'
 
@@ -17,6 +22,11 @@ const allStrategies = [
   expectedValueStrategy,
   contextAwareStrategy,
   aggressiveStrategy,
+  riskAverseStrategy,
+  highValueHunterStrategy,
+  deckDepletionStrategy,
+  flip7ChaserStrategy,
+  cardDistributionStrategy,
 ]
 
 interface MatchupResult {
@@ -48,12 +58,12 @@ function App() {
     <div className="container">
       <header>
         <h1>🎮 Flip 7 Strategy Arena</h1>
-        <p>Head-to-head battle results from 15,000 simulated games</p>
+        <p>11 strategies • 110 head-to-head matchups • 55,000 simulated games</p>
       </header>
 
       <section className="arena-summary">
         <h2>🏆 Overall Rankings</h2>
-        <p className="subtitle">Based on 2,500 games per strategy (5 opponents × 500 games each)</p>
+        <p className="subtitle">Based on 5,000 games per strategy (10 opponents × 500 games each)</p>
         <div className="rankings">
           {rankings.map((ranking, index) => {
             const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '  '
@@ -180,20 +190,24 @@ function App() {
         <h2>💡 Key Insights</h2>
         <div className="insight-grid">
           <div className="insight-card">
-            <h3>🎯 Best Strategy</h3>
-            <p><strong>Expected Value Maximizer</strong> dominates with 56.1% win rate. It only draws when the math says it's worth it - calculating if potential gains outweigh bust risks.</p>
+            <h3>🎯 Champion Strategy</h3>
+            <p><strong>Expected Value Maximizer</strong> dominates at 58.1%. It calculates whether potential gains outweigh bust risks before every draw.</p>
           </div>
           <div className="insight-card">
-            <h3>🧠 Memory Helps</h3>
-            <p><strong>Perfect Memory</strong> (53.7%) and <strong>Blackjack-Inspired</strong> (53.4%) both track cards and use that information to make better decisions.</p>
+            <h3>🎲 Flip 7 Matters</h3>
+            <p><strong>Flip 7 Probability Chaser</strong> (2nd, 55.4%) proves that going for Flip 7 when odds are favorable (&gt;40%) is a winning strategy.</p>
+          </div>
+          <div className="insight-card">
+            <h3>📊 High-Value Works</h3>
+            <p><strong>High-Value Hunter</strong> (5th, 53.5%) shows that targeting one 10-12 card then stopping is effective.</p>
           </div>
           <div className="insight-card">
             <h3>⚖️ Your Strategy</h3>
-            <p><strong>John's Current Strategy</strong> places 5th at 49.5%. It's below average, losing to all top strategies. The "draw 3 then evaluate" approach is too simplistic.</p>
+            <p><strong>John's Current Strategy</strong> (8th, 51.1%) is middle-of-the-pack. Better than conservative approaches but loses to math-based strategies.</p>
           </div>
           <div className="insight-card">
-            <h3>🚫 Aggression Fails</h3>
-            <p><strong>Aggressive (Poker-style)</strong> crashes at 36.6%. Going for 30+ points every game leads to too many busts. Conservative play wins in Flip 7.</p>
+            <h3>🚫 Too Conservative Fails</h3>
+            <p><strong>Risk-Averse Conservative</strong> (11th, 36.2%) proves that playing too safe doesn't score enough points to win.</p>
           </div>
         </div>
       </section>

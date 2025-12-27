@@ -206,6 +206,157 @@ impl Strategy for AggressiveStrategy {
     }
 }
 
+struct RiskAverseStrategy;
+impl Strategy for RiskAverseStrategy {
+    fn name(&self) -> &str { "Risk-Averse Conservative" }
+    fn description(&self) -> &str { "Stops at 3-4 cards with 12+ points, never exceeds 15% bust risk" }
+
+    fn should_hit(&self, hand: &PlayerHand, deck_size: usize) -> bool {
+        let card_count = hand.numbers.len();
+        let score: u32 = hand.numbers.iter().map(|&n| n as u32).sum();
+        let bust_prob = calculate_bust_prob(hand, deck_size);
+
+        // Never exceed 15% bust probability
+        if bust_prob > 0.15 { return false; }
+
+        // Stop early if we have decent points
+        if card_count >= 3 && score >= 12 { return false; }
+        if card_count >= 4 { return false; }
+
+        card_count < 5
+    }
+}
+
+struct HighValueHunterStrategy;
+impl Strategy for HighValueHunterStrategy {
+    fn name(&self) -> &str { "High-Value Hunter" }
+    fn description(&self) -> &str { "Aggressively pursues 10-12 cards, stops after getting one" }
+
+    fn should_hit(&self, hand: &PlayerHand, deck_size: usize) -> bool {
+        let card_count = hand.numbers.len();
+        let has_high = hand.numbers.iter().any(|&n| n >= 10);
+        let bust_prob = calculate_bust_prob(hand, deck_size);
+
+        // If we got a high card, be conservative
+        if has_high {
+            if card_count >= 3 { return false; }
+            if bust_prob > 0.20 { return false; }
+        }
+
+        // Otherwise, aggressively seek high cards
+        if bust_prob > 0.35 { return false; }
+        card_count < 5
+    }
+}
+
+struct DeckDepletionStrategy;
+impl Strategy for DeckDepletionStrategy {
+    fn name(&self) -> &str { "Deck Depletion Specialist" }
+    fn description(&self) -> &str { "Adjusts risk based on remaining deck size" }
+
+    fn should_hit(&self, hand: &PlayerHand, deck_size: usize) -> bool {
+        let card_count = hand.numbers.len();
+        let score: u32 = hand.numbers.iter().map(|&n| n as u32).sum();
+        let bust_prob = calculate_bust_prob(hand, deck_size);
+        let deck_proportion = deck_size as f64 / 94.0;
+
+        if deck_proportion > 0.75 {
+            // Early game: very conservative
+            if card_count >= 3 && score >= 15 { return false; }
+            if bust_prob > 0.18 { return false; }
+        } else if deck_proportion > 0.40 {
+            // Mid game: balanced
+            if card_count >= 4 && score >= 20 { return false; }
+            if bust_prob > 0.25 { return false; }
+        } else {
+            // Late game: aggressive (fewer duplicates likely)
+            if bust_prob > 0.35 { return false; }
+        }
+
+        card_count < 6
+    }
+}
+
+struct Flip7ChaserStrategy;
+impl Strategy for Flip7ChaserStrategy {
+    fn name(&self) -> &str { "Flip 7 Probability Chaser" }
+    fn description(&self) -> &str { "Calculates Flip 7 odds, only pursues when >40% probable" }
+
+    fn should_hit(&self, hand: &PlayerHand, deck_size: usize) -> bool {
+        let card_count = hand.numbers.len();
+        let bust_prob = calculate_bust_prob(hand, deck_size);
+
+        if card_count < 3 { return true; }
+
+        // Calculate probability of getting Flip 7
+        let cards_needed = 7 - card_count;
+        if cards_needed <= 0 { return false; }
+
+        // Rough estimate: probability all remaining draws are unique
+        let flip7_prob = if deck_size > 0 {
+            let available_unique = 13 - card_count;
+            (available_unique as f64 / deck_size as f64).powi(cards_needed as i32)
+        } else {
+            0.0
+        };
+
+        // If Flip 7 is reasonably likely (>40%), go for it
+        if flip7_prob > 0.40 && bust_prob < 0.30 {
+            return card_count < 7;
+        }
+
+        // Otherwise play conservatively
+        let score: u32 = hand.numbers.iter().map(|&n| n as u32).sum();
+        if score >= 18 && bust_prob > 0.20 { return false; }
+
+        card_count < 5
+    }
+}
+
+struct CardDistributionStrategy;
+impl Strategy for CardDistributionStrategy {
+    fn name(&self) -> &str { "Card Distribution Expert" }
+    fn description(&self) -> &str { "Tracks full card distribution for precise probabilities" }
+
+    fn should_hit(&self, hand: &PlayerHand, deck_size: usize) -> bool {
+        let card_count = hand.numbers.len();
+        if card_count < 2 { return true; }
+
+        // Calculate exact remaining distribution
+        let mut remaining = [0i32; 13];
+        for i in 0..13 {
+            remaining[i] = if i == 0 { 1 } else { i as i32 };
+        }
+
+        // Subtract our hand
+        for &num in &hand.numbers {
+            remaining[num as usize] -= 1;
+        }
+
+        // Calculate safe cards (won't bust)
+        let safe_cards: i32 = remaining.iter().enumerate()
+            .filter(|(i, _)| !hand.numbers.contains(&(*i as u8)))
+            .map(|(_, &count)| count.max(0))
+            .sum();
+
+        let total_remaining = deck_size as i32 - 22; // Approximate (subtract modifiers/actions)
+        let bust_prob = if total_remaining > 0 {
+            1.0 - (safe_cards as f64 / total_remaining as f64)
+        } else {
+            1.0
+        };
+
+        let score: u32 = hand.numbers.iter().map(|&n| n as u32).sum();
+
+        // Use precise probabilities for decisions
+        if bust_prob > 0.25 { return false; }
+        if card_count >= 4 && score >= 20 && bust_prob > 0.18 { return false; }
+        if card_count >= 5 && bust_prob > 0.12 { return false; }
+
+        card_count < 6
+    }
+}
+
 fn calculate_bust_prob(hand: &PlayerHand, deck_size: usize) -> f64 {
     if deck_size == 0 { return 1.0; }
 
@@ -374,6 +525,11 @@ fn main() {
         Box::new(ExpectedValueStrategy),
         Box::new(ContextAwareStrategy),
         Box::new(AggressiveStrategy),
+        Box::new(RiskAverseStrategy),
+        Box::new(HighValueHunterStrategy),
+        Box::new(DeckDepletionStrategy),
+        Box::new(Flip7ChaserStrategy),
+        Box::new(CardDistributionStrategy),
     ];
 
     let total_matchups = strategies.len() * (strategies.len() - 1);

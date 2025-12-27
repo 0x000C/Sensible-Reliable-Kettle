@@ -14,5 +14,12 @@ export {
   lowVarianceStrategy,
   contextAwareStrategy,
 } from './advanced-strategies';
+export {
+  riskAverseStrategy,
+  highValueHunterStrategy,
+  deckDepletionStrategy,
+  flip7ChaserStrategy,
+  cardDistributionStrategy
+} from './new-strategies';
 
 export type { Strategy, StrategyContext } from './types';

@@ -1,134 +1,464 @@
 {
   "matchups": {
-    "Expected Value Maximizer": {
-      "Blackjack-Inspired": {
-        "wins": 263,
-        "games": 500
-      },
-      "Aggressive (Poker-style)": {
-        "wins": 311,
-        "games": 500
-      },
-      "John's Current Strategy": {
-        "wins": 253,
-        "games": 500
-      },
-      "Context-Aware Adaptive": {
-        "wins": 296,
-        "games": 500
-      },
-      "Perfect Memory": {
-        "wins": 280,
-        "games": 500
-      }
-    },
-    "Blackjack-Inspired": {
+    "Deck Depletion Specialist": {
       "Expected Value Maximizer": {
-        "wins": 218,
-        "games": 500
-      },
-      "Perfect Memory": {
-        "wins": 252,
-        "games": 500
-      },
-      "Context-Aware Adaptive": {
-        "wins": 249,
+        "wins": 184,
         "games": 500
       },
       "John's Current Strategy": {
-        "wins": 273,
+        "wins": 234,
         "games": 500
       },
-      "Aggressive (Poker-style)": {
-        "wins": 342,
+      "High-Value Hunter": {
+        "wins": 205,
         "games": 500
-      }
-    },
-    "Context-Aware Adaptive": {
+      },
       "Blackjack-Inspired": {
-        "wins": 248,
-        "games": 500
-      },
-      "Aggressive (Poker-style)": {
-        "wins": 301,
-        "games": 500
-      },
-      "Perfect Memory": {
-        "wins": 264,
-        "games": 500
-      },
-      "Expected Value Maximizer": {
-        "wins": 235,
-        "games": 500
-      },
-      "John's Current Strategy": {
-        "wins": 261,
-        "games": 500
-      }
-    },
-    "Aggressive (Poker-style)": {
-      "Blackjack-Inspired": {
-        "wins": 187,
-        "games": 500
-      },
-      "Perfect Memory": {
         "wins": 195,
         "games": 500
       },
-      "Expected Value Maximizer": {
-        "wins": 163,
+      "Card Distribution Expert": {
+        "wins": 210,
         "games": 500
       },
       "Context-Aware Adaptive": {
+        "wins": 203,
+        "games": 500
+      },
+      "Perfect Memory": {
         "wins": 179,
         "games": 500
       },
-      "John's Current Strategy": {
-        "wins": 191,
-        "games": 500
-      }
-    },
-    "Perfect Memory": {
-      "Expected Value Maximizer": {
-        "wins": 256,
-        "games": 500
-      },
-      "John's Current Strategy": {
-        "wins": 242,
+      "Risk-Averse Conservative": {
+        "wins": 283,
         "games": 500
       },
       "Aggressive (Poker-style)": {
-        "wins": 315,
+        "wins": 288,
         "games": 500
       },
-      "Blackjack-Inspired": {
-        "wins": 267,
-        "games": 500
-      },
-      "Context-Aware Adaptive": {
-        "wins": 263,
+      "Flip 7 Probability Chaser": {
+        "wins": 196,
         "games": 500
       }
     },
     "John's Current Strategy": {
-      "Aggressive (Poker-style)": {
-        "wins": 304,
+      "Perfect Memory": {
+        "wins": 243,
+        "games": 500
+      },
+      "Card Distribution Expert": {
+        "wins": 259,
         "games": 500
       },
       "Blackjack-Inspired": {
-        "wins": 217,
+        "wins": 219,
+        "games": 500
+      },
+      "Deck Depletion Specialist": {
+        "wins": 272,
+        "games": 500
+      },
+      "High-Value Hunter": {
+        "wins": 257,
         "games": 500
       },
       "Context-Aware Adaptive": {
-        "wins": 249,
-        "games": 500
-      },
-      "Perfect Memory": {
-        "wins": 254,
+        "wins": 250,
         "games": 500
       },
       "Expected Value Maximizer": {
         "wins": 213,
+        "games": 500
+      },
+      "Aggressive (Poker-style)": {
+        "wins": 306,
+        "games": 500
+      },
+      "Flip 7 Probability Chaser": {
+        "wins": 226,
+        "games": 500
+      },
+      "Risk-Averse Conservative": {
+        "wins": 308,
+        "games": 500
+      }
+    },
+    "Flip 7 Probability Chaser": {
+      "Deck Depletion Specialist": {
+        "wins": 305,
+        "games": 500
+      },
+      "Card Distribution Expert": {
+        "wins": 258,
+        "games": 500
+      },
+      "Aggressive (Poker-style)": {
+        "wins": 310,
+        "games": 500
+      },
+      "Perfect Memory": {
+        "wins": 257,
+        "games": 500
+      },
+      "Blackjack-Inspired": {
+        "wins": 254,
+        "games": 500
+      },
+      "Expected Value Maximizer": {
+        "wins": 225,
+        "games": 500
+      },
+      "John's Current Strategy": {
+        "wins": 255,
+        "games": 500
+      },
+      "Risk-Averse Conservative": {
+        "wins": 351,
+        "games": 500
+      },
+      "Context-Aware Adaptive": {
+        "wins": 286,
+        "games": 500
+      },
+      "High-Value Hunter": {
+        "wins": 268,
+        "games": 500
+      }
+    },
+    "Expected Value Maximizer": {
+      "Perfect Memory": {
+        "wins": 276,
+        "games": 500
+      },
+      "Card Distribution Expert": {
+        "wins": 270,
+        "games": 500
+      },
+      "Context-Aware Adaptive": {
+        "wins": 251,
+        "games": 500
+      },
+      "High-Value Hunter": {
+        "wins": 287,
+        "games": 500
+      },
+      "Blackjack-Inspired": {
+        "wins": 263,
+        "games": 500
+      },
+      "John's Current Strategy": {
+        "wins": 275,
+        "games": 500
+      },
+      "Flip 7 Probability Chaser": {
+        "wins": 274,
+        "games": 500
+      },
+      "Risk-Averse Conservative": {
+        "wins": 352,
+        "games": 500
+      },
+      "Aggressive (Poker-style)": {
+        "wins": 333,
+        "games": 500
+      },
+      "Deck Depletion Specialist": {
+        "wins": 322,
+        "games": 500
+      }
+    },
+    "Context-Aware Adaptive": {
+      "High-Value Hunter": {
+        "wins": 245,
+        "games": 500
+      },
+      "Risk-Averse Conservative": {
+        "wins": 333,
+        "games": 500
+      },
+      "John's Current Strategy": {
+        "wins": 251,
+        "games": 500
+      },
+      "Card Distribution Expert": {
+        "wins": 248,
+        "games": 500
+      },
+      "Blackjack-Inspired": {
+        "wins": 222,
+        "games": 500
+      },
+      "Expected Value Maximizer": {
+        "wins": 191,
+        "games": 500
+      },
+      "Aggressive (Poker-style)": {
+        "wins": 298,
+        "games": 500
+      },
+      "Perfect Memory": {
+        "wins": 255,
+        "games": 500
+      },
+      "Deck Depletion Specialist": {
+        "wins": 278,
+        "games": 500
+      },
+      "Flip 7 Probability Chaser": {
+        "wins": 235,
+        "games": 500
+      }
+    },
+    "Risk-Averse Conservative": {
+      "Perfect Memory": {
+        "wins": 169,
+        "games": 500
+      },
+      "Aggressive (Poker-style)": {
+        "wins": 282,
+        "games": 500
+      },
+      "High-Value Hunter": {
+        "wins": 156,
+        "games": 500
+      },
+      "Flip 7 Probability Chaser": {
+        "wins": 146,
+        "games": 500
+      },
+      "John's Current Strategy": {
+        "wins": 183,
+        "games": 500
+      },
+      "Expected Value Maximizer": {
+        "wins": 150,
+        "games": 500
+      },
+      "Card Distribution Expert": {
+        "wins": 204,
+        "games": 500
+      },
+      "Context-Aware Adaptive": {
+        "wins": 170,
+        "games": 500
+      },
+      "Deck Depletion Specialist": {
+        "wins": 193,
+        "games": 500
+      },
+      "Blackjack-Inspired": {
+        "wins": 159,
+        "games": 500
+      }
+    },
+    "High-Value Hunter": {
+      "Flip 7 Probability Chaser": {
+        "wins": 241,
+        "games": 500
+      },
+      "Perfect Memory": {
+        "wins": 259,
+        "games": 500
+      },
+      "John's Current Strategy": {
+        "wins": 251,
+        "games": 500
+      },
+      "Aggressive (Poker-style)": {
+        "wins": 304,
+        "games": 500
+      },
+      "Expected Value Maximizer": {
+        "wins": 225,
+        "games": 500
+      },
+      "Card Distribution Expert": {
+        "wins": 266,
+        "games": 500
+      },
+      "Risk-Averse Conservative": {
+        "wins": 317,
+        "games": 500
+      },
+      "Blackjack-Inspired": {
+        "wins": 259,
+        "games": 500
+      },
+      "Context-Aware Adaptive": {
+        "wins": 253,
+        "games": 500
+      },
+      "Deck Depletion Specialist": {
+        "wins": 302,
+        "games": 500
+      }
+    },
+    "Perfect Memory": {
+      "Blackjack-Inspired": {
+        "wins": 227,
+        "games": 500
+      },
+      "Risk-Averse Conservative": {
+        "wins": 349,
+        "games": 500
+      },
+      "John's Current Strategy": {
+        "wins": 271,
+        "games": 500
+      },
+      "Card Distribution Expert": {
+        "wins": 241,
+        "games": 500
+      },
+      "Deck Depletion Specialist": {
+        "wins": 293,
+        "games": 500
+      },
+      "Aggressive (Poker-style)": {
+        "wins": 336,
+        "games": 500
+      },
+      "High-Value Hunter": {
+        "wins": 263,
+        "games": 500
+      },
+      "Expected Value Maximizer": {
+        "wins": 215,
+        "games": 500
+      },
+      "Flip 7 Probability Chaser": {
+        "wins": 231,
+        "games": 500
+      },
+      "Context-Aware Adaptive": {
+        "wins": 273,
+        "games": 500
+      }
+    },
+    "Aggressive (Poker-style)": {
+      "Flip 7 Probability Chaser": {
+        "wins": 210,
+        "games": 500
+      },
+      "Risk-Averse Conservative": {
+        "wins": 230,
+        "games": 500
+      },
+      "High-Value Hunter": {
+        "wins": 191,
+        "games": 500
+      },
+      "Perfect Memory": {
+        "wins": 171,
+        "games": 500
+      },
+      "Deck Depletion Specialist": {
+        "wins": 236,
+        "games": 500
+      },
+      "Blackjack-Inspired": {
+        "wins": 172,
+        "games": 500
+      },
+      "Expected Value Maximizer": {
+        "wins": 161,
+        "games": 500
+      },
+      "Card Distribution Expert": {
+        "wins": 212,
+        "games": 500
+      },
+      "Context-Aware Adaptive": {
+        "wins": 202,
+        "games": 500
+      },
+      "John's Current Strategy": {
+        "wins": 193,
+        "games": 500
+      }
+    },
+    "Blackjack-Inspired": {
+      "John's Current Strategy": {
+        "wins": 265,
+        "games": 500
+      },
+      "Context-Aware Adaptive": {
+        "wins": 260,
+        "games": 500
+      },
+      "Aggressive (Poker-style)": {
+        "wins": 305,
+        "games": 500
+      },
+      "Perfect Memory": {
+        "wins": 256,
+        "games": 500
+      },
+      "Deck Depletion Specialist": {
+        "wins": 304,
+        "games": 500
+      },
+      "Expected Value Maximizer": {
+        "wins": 247,
+        "games": 500
+      },
+      "High-Value Hunter": {
+        "wins": 253,
+        "games": 500
+      },
+      "Card Distribution Expert": {
+        "wins": 248,
+        "games": 500
+      },
+      "Risk-Averse Conservative": {
+        "wins": 335,
+        "games": 500
+      },
+      "Flip 7 Probability Chaser": {
+        "wins": 246,
+        "games": 500
+      }
+    },
+    "Card Distribution Expert": {
+      "Expected Value Maximizer": {
+        "wins": 211,
+        "games": 500
+      },
+      "Aggressive (Poker-style)": {
+        "wins": 300,
+        "games": 500
+      },
+      "Flip 7 Probability Chaser": {
+        "wins": 246,
+        "games": 500
+      },
+      "John's Current Strategy": {
+        "wins": 245,
+        "games": 500
+      },
+      "Risk-Averse Conservative": {
+        "wins": 304,
+        "games": 500
+      },
+      "Context-Aware Adaptive": {
+        "wins": 253,
+        "games": 500
+      },
+      "Blackjack-Inspired": {
+        "wins": 252,
+        "games": 500
+      },
+      "Perfect Memory": {
+        "wins": 238,
+        "games": 500
+      },
+      "Deck Depletion Specialist": {
+        "wins": 272,
+        "games": 500
+      },
+      "High-Value Hunter": {
+        "wins": 245,
         "games": 500
       }
     }
@@ -136,39 +466,69 @@
   "overall_rankings": [
     {
       "name": "Expected Value Maximizer",
-      "winRate": 56.120000000000005,
-      "totalWins": 1403,
-      "totalGames": 2500
+      "winRate": 58.06,
+      "totalWins": 2903,
+      "totalGames": 5000
     },
     {
-      "name": "Perfect Memory",
-      "winRate": 53.72,
-      "totalWins": 1343,
-      "totalGames": 2500
+      "name": "Flip 7 Probability Chaser",
+      "winRate": 55.379999999999995,
+      "totalWins": 2769,
+      "totalGames": 5000
     },
     {
       "name": "Blackjack-Inspired",
-      "winRate": 53.36,
-      "totalWins": 1334,
-      "totalGames": 2500
+      "winRate": 54.379999999999995,
+      "totalWins": 2719,
+      "totalGames": 5000
+    },
+    {
+      "name": "Perfect Memory",
+      "winRate": 53.98,
+      "totalWins": 2699,
+      "totalGames": 5000
+    },
+    {
+      "name": "High-Value Hunter",
+      "winRate": 53.54,
+      "totalWins": 2677,
+      "totalGames": 5000
+    },
+    {
+      "name": "Card Distribution Expert",
+      "winRate": 51.32,
+      "totalWins": 2566,
+      "totalGames": 5000
     },
     {
       "name": "Context-Aware Adaptive",
-      "winRate": 52.35999999999999,
-      "totalWins": 1309,
-      "totalGames": 2500
+      "winRate": 51.12,
+      "totalWins": 2556,
+      "totalGames": 5000
     },
     {
       "name": "John's Current Strategy",
-      "winRate": 49.480000000000004,
-      "totalWins": 1237,
-      "totalGames": 2500
+      "winRate": 51.06,
+      "totalWins": 2553,
+      "totalGames": 5000
+    },
+    {
+      "name": "Deck Depletion Specialist",
+      "winRate": 43.54,
+      "totalWins": 2177,
+      "totalGames": 5000
     },
     {
       "name": "Aggressive (Poker-style)",
-      "winRate": 36.6,
-      "totalWins": 915,
-      "totalGames": 2500
+      "winRate": 39.56,
+      "totalWins": 1978,
+      "totalGames": 5000
+    },
+    {
+      "name": "Risk-Averse Conservative",
+      "winRate": 36.24,
+      "totalWins": 1812,
+      "totalGames": 5000
     }
   ],
   "strategies": [
@@ -195,6 +555,26 @@
     {
       "name": "Aggressive (Poker-style)",
       "description": "Takes risks for 30+ points"
+    },
+    {
+      "name": "Risk-Averse Conservative",
+      "description": "Stops at 3-4 cards with 12+ points, never exceeds 15% bust risk"
+    },
+    {
+      "name": "High-Value Hunter",
+      "description": "Aggressively pursues 10-12 cards, stops after getting one"
+    },
+    {
+      "name": "Deck Depletion Specialist",
+      "description": "Adjusts risk based on remaining deck size"
+    },
+    {
+      "name": "Flip 7 Probability Chaser",
+      "description": "Calculates Flip 7 odds, only pursues when >40% probable"
+    },
+    {
+      "name": "Card Distribution Expert",
+      "description": "Tracks full card distribution for precise probabilities"
     }
   ]
 }
