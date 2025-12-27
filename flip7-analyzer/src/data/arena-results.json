@@ -1,0 +1,200 @@
+{
+  "matchups": {
+    "Expected Value Maximizer": {
+      "Blackjack-Inspired": {
+        "wins": 263,
+        "games": 500
+      },
+      "Aggressive (Poker-style)": {
+        "wins": 311,
+        "games": 500
+      },
+      "John's Current Strategy": {
+        "wins": 253,
+        "games": 500
+      },
+      "Context-Aware Adaptive": {
+        "wins": 296,
+        "games": 500
+      },
+      "Perfect Memory": {
+        "wins": 280,
+        "games": 500
+      }
+    },
+    "Blackjack-Inspired": {
+      "Expected Value Maximizer": {
+        "wins": 218,
+        "games": 500
+      },
+      "Perfect Memory": {
+        "wins": 252,
+        "games": 500
+      },
+      "Context-Aware Adaptive": {
+        "wins": 249,
+        "games": 500
+      },
+      "John's Current Strategy": {
+        "wins": 273,
+        "games": 500
+      },
+      "Aggressive (Poker-style)": {
+        "wins": 342,
+        "games": 500
+      }
+    },
+    "Context-Aware Adaptive": {
+      "Blackjack-Inspired": {
+        "wins": 248,
+        "games": 500
+      },
+      "Aggressive (Poker-style)": {
+        "wins": 301,
+        "games": 500
+      },
+      "Perfect Memory": {
+        "wins": 264,
+        "games": 500
+      },
+      "Expected Value Maximizer": {
+        "wins": 235,
+        "games": 500
+      },
+      "John's Current Strategy": {
+        "wins": 261,
+        "games": 500
+      }
+    },
+    "Aggressive (Poker-style)": {
+      "Blackjack-Inspired": {
+        "wins": 187,
+        "games": 500
+      },
+      "Perfect Memory": {
+        "wins": 195,
+        "games": 500
+      },
+      "Expected Value Maximizer": {
+        "wins": 163,
+        "games": 500
+      },
+      "Context-Aware Adaptive": {
+        "wins": 179,
+        "games": 500
+      },
+      "John's Current Strategy": {
+        "wins": 191,
+        "games": 500
+      }
+    },
+    "Perfect Memory": {
+      "Expected Value Maximizer": {
+        "wins": 256,
+        "games": 500
+      },
+      "John's Current Strategy": {
+        "wins": 242,
+        "games": 500
+      },
+      "Aggressive (Poker-style)": {
+        "wins": 315,
+        "games": 500
+      },
+      "Blackjack-Inspired": {
+        "wins": 267,
+        "games": 500
+      },
+      "Context-Aware Adaptive": {
+        "wins": 263,
+        "games": 500
+      }
+    },
+    "John's Current Strategy": {
+      "Aggressive (Poker-style)": {
+        "wins": 304,
+        "games": 500
+      },
+      "Blackjack-Inspired": {
+        "wins": 217,
+        "games": 500
+      },
+      "Context-Aware Adaptive": {
+        "wins": 249,
+        "games": 500
+      },
+      "Perfect Memory": {
+        "wins": 254,
+        "games": 500
+      },
+      "Expected Value Maximizer": {
+        "wins": 213,
+        "games": 500
+      }
+    }
+  },
+  "overall_rankings": [
+    {
+      "name": "Expected Value Maximizer",
+      "winRate": 56.120000000000005,
+      "totalWins": 1403,
+      "totalGames": 2500
+    },
+    {
+      "name": "Perfect Memory",
+      "winRate": 53.72,
+      "totalWins": 1343,
+      "totalGames": 2500
+    },
+    {
+      "name": "Blackjack-Inspired",
+      "winRate": 53.36,
+      "totalWins": 1334,
+      "totalGames": 2500
+    },
+    {
+      "name": "Context-Aware Adaptive",
+      "winRate": 52.35999999999999,
+      "totalWins": 1309,
+      "totalGames": 2500
+    },
+    {
+      "name": "John's Current Strategy",
+      "winRate": 49.480000000000004,
+      "totalWins": 1237,
+      "totalGames": 2500
+    },
+    {
+      "name": "Aggressive (Poker-style)",
+      "winRate": 36.6,
+      "totalWins": 915,
+      "totalGames": 2500
+    }
+  ],
+  "strategies": [
+    {
+      "name": "John's Current Strategy",
+      "description": "Draw 3 cards immediately, then stop if cards are 9-12 (or 5-8 if deck is fresh)"
+    },
+    {
+      "name": "Perfect Memory",
+      "description": "Tracks all visible cards, calculates exact bust probabilities"
+    },
+    {
+      "name": "Blackjack-Inspired",
+      "description": "Stand on 18+, hit on <13"
+    },
+    {
+      "name": "Expected Value Maximizer",
+      "description": "Only draws when EV is positive"
+    },
+    {
+      "name": "Context-Aware Adaptive",
+      "description": "Adjusts based on deck state and position"
+    },
+    {
+      "name": "Aggressive (Poker-style)",
+      "description": "Takes risks for 30+ points"
+    }
+  ]
+}
