@@ -10,6 +10,8 @@ import {
   balancedStrategy,
   adaptiveStrategy,
 } from './strategies'
+import { StrategyInsights } from './components/StrategyInsights'
+import { WinRateChart } from './components/WinRateChart'
 
 function App() {
   const [results, setResults] = useState<SimulationResult | null>(null)
@@ -80,8 +82,14 @@ function App() {
         </p>
       </section>
 
-      <section className="summary">
-        <h2>Summary</h2>
+      <StrategyInsights results={results} />
+
+      <section className="visualization">
+        <WinRateChart results={results} />
+      </section>
+
+      <section className="all-strategies">
+        <h2>All Strategies Tested</h2>
         <div className="strategy-grid">
           {results.config.strategies.map((strategy, index) => (
             <div key={index} className="strategy-card">
