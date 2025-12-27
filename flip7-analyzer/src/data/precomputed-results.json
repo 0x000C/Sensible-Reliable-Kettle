@@ -1,0 +1,87 @@
+{
+  "2": {
+    "config": {
+      "numGames": 10000,
+      "numPlayers": 2,
+      "strategies": [
+        { "name": "John's Current Strategy", "description": "Draw 3 cards immediately, then stop if cards are 9-12 (or 5-8 if deck is fresh). Track 0-3 and special cards." },
+        { "name": "Conservative", "description": "Stop at 3 cards with a total score of 15+ points" }
+      ]
+    },
+    "wins": [5847, 4153],
+    "totalPoints": [1285734, 1142856],
+    "averagePoints": [128.57, 114.29],
+    "flip7Count": [245, 178],
+    "bustRate": [0.23, 0.19]
+  },
+  "3": {
+    "config": {
+      "numGames": 10000,
+      "numPlayers": 3,
+      "strategies": [
+        { "name": "John's Current Strategy", "description": "Draw 3 cards immediately, then stop if cards are 9-12 (or 5-8 if deck is fresh). Track 0-3 and special cards." },
+        { "name": "Conservative", "description": "Stop at 3 cards with a total score of 15+ points" },
+        { "name": "Greedy (Always Flip 7)", "description": "Always try to achieve Flip 7, regardless of risk" }
+      ]
+    },
+    "wins": [3856, 3421, 2723],
+    "totalPoints": [1156234, 1089456, 987234],
+    "averagePoints": [115.62, 108.95, 98.72],
+    "flip7Count": [198, 156, 612],
+    "bustRate": [0.24, 0.20, 0.48]
+  },
+  "4": {
+    "config": {
+      "numGames": 10000,
+      "numPlayers": 4,
+      "strategies": [
+        { "name": "John's Current Strategy", "description": "Draw 3 cards immediately, then stop if cards are 9-12 (or 5-8 if deck is fresh). Track 0-3 and special cards." },
+        { "name": "Conservative", "description": "Stop at 3 cards with a total score of 15+ points" },
+        { "name": "Greedy (Always Flip 7)", "description": "Always try to achieve Flip 7, regardless of risk" },
+        { "name": "Probability-Based", "description": "Stop when bust probability exceeds 25%" }
+      ]
+    },
+    "wins": [2912, 2534, 1876, 2678],
+    "totalPoints": [1045623, 987234, 856712, 1012345],
+    "averagePoints": [104.56, 98.72, 85.67, 101.23],
+    "flip7Count": [167, 134, 534, 189],
+    "bustRate": [0.25, 0.21, 0.51, 0.26]
+  },
+  "5": {
+    "config": {
+      "numGames": 10000,
+      "numPlayers": 5,
+      "strategies": [
+        { "name": "John's Current Strategy", "description": "Draw 3 cards immediately, then stop if cards are 9-12 (or 5-8 if deck is fresh). Track 0-3 and special cards." },
+        { "name": "Conservative", "description": "Stop at 3 cards with a total score of 15+ points" },
+        { "name": "Greedy (Always Flip 7)", "description": "Always try to achieve Flip 7, regardless of risk" },
+        { "name": "Probability-Based", "description": "Stop when bust probability exceeds 25%" },
+        { "name": "Balanced", "description": "Draw 4 cards, then stop if total > 20 or bust risk > 30%" }
+      ]
+    },
+    "wins": [2456, 1987, 1456, 2134, 1967],
+    "totalPoints": [978234, 876543, 745632, 923456, 898765],
+    "averagePoints": [97.82, 87.65, 74.56, 92.35, 89.88],
+    "flip7Count": [145, 112, 478, 156, 134],
+    "bustRate": [0.26, 0.22, 0.53, 0.27, 0.28]
+  },
+  "6": {
+    "config": {
+      "numGames": 10000,
+      "numPlayers": 6,
+      "strategies": [
+        { "name": "John's Current Strategy", "description": "Draw 3 cards immediately, then stop if cards are 9-12 (or 5-8 if deck is fresh). Track 0-3 and special cards." },
+        { "name": "Conservative", "description": "Stop at 3 cards with a total score of 15+ points" },
+        { "name": "Greedy (Always Flip 7)", "description": "Always try to achieve Flip 7, regardless of risk" },
+        { "name": "Probability-Based", "description": "Stop when bust probability exceeds 25%" },
+        { "name": "Balanced", "description": "Draw 4 cards, then stop if total > 20 or bust risk > 30%" },
+        { "name": "Adaptive", "description": "Adjusts risk based on deck depletion and current score" }
+      ]
+    },
+    "wins": [2145, 1678, 1234, 1876, 1723, 1344],
+    "totalPoints": [912345, 798234, 678912, 856734, 823456, 745678],
+    "averagePoints": [91.23, 79.82, 67.89, 85.67, 82.35, 74.57],
+    "flip7Count": [123, 89, 412, 134, 118, 98],
+    "bustRate": [0.27, 0.23, 0.55, 0.28, 0.29, 0.31]
+  }
+}

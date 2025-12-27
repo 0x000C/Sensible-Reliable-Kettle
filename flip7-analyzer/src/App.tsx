@@ -1,57 +1,27 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { runSimulation } from './simulation/simulator'
 import type { SimulationResult } from './simulation/simulator'
-import {
-  johnsStrategy,
-  conservativeStrategy,
-  greedyStrategy,
-  probabilityStrategy,
-  balancedStrategy,
-  adaptiveStrategy,
-} from './strategies'
 import { StrategyInsights } from './components/StrategyInsights'
 import { WinRateChart } from './components/WinRateChart'
+import precomputedData from './data/precomputed-results.json'
 
 function App() {
   const [results, setResults] = useState<SimulationResult | null>(null)
-  const [loading, setLoading] = useState(true)
   const [playerCount, setPlayerCount] = useState(3)
 
   useEffect(() => {
-    runSimulations()
+    // Load pre-computed results for the selected player count
+    const data = precomputedData[playerCount.toString() as keyof typeof precomputedData]
+    if (data) {
+      setResults(data as SimulationResult)
+    }
   }, [playerCount])
 
-  const runSimulations = () => {
-    setLoading(true)
-
-    // Run simulations in a timeout to allow UI to update
-    setTimeout(() => {
-      const strategies = [
-        johnsStrategy,
-        conservativeStrategy,
-        greedyStrategy,
-        probabilityStrategy,
-        balancedStrategy,
-        adaptiveStrategy,
-      ].slice(0, playerCount)
-
-      const result = runSimulation({
-        numGames: 1000,
-        numPlayers: playerCount,
-        strategies,
-      })
-
-      setResults(result)
-      setLoading(false)
-    }, 100)
-  }
-
-  if (loading || !results) {
+  if (!results) {
     return (
       <div className="container">
         <h1>Flip 7 Strategy Analyzer</h1>
-        <p>Running simulations...</p>
+        <p>Loading...</p>
       </div>
     )
   }
@@ -76,9 +46,8 @@ function App() {
             <option value={6}>6</option>
           </select>
         </label>
-        <button onClick={runSimulations}>Re-run Simulation</button>
         <p className="simulation-info">
-          Ran {results.config.numGames.toLocaleString()} games with {playerCount} players
+          Based on {results.config.numGames.toLocaleString()} simulated games with {playerCount} players
         </p>
       </section>
 
