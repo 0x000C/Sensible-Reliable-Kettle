@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "simulate": "tsx scripts/run-simulations.ts"
+    "simulate": "tsx scripts/run-simulations.ts",
+    "arena": "tsx scripts/run-arena.ts"
   },
   "dependencies": {
     "react": "^19.2.0",
