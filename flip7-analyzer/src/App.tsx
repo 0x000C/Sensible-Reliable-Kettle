@@ -1,9 +1,26 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import type { SimulationResult } from './simulation/simulator'
+import {
+  johnsStrategy,
+  conservativeStrategy,
+  greedyStrategy,
+  probabilityStrategy,
+  balancedStrategy,
+  adaptiveStrategy,
+} from './strategies'
 import { StrategyInsights } from './components/StrategyInsights'
 import { WinRateChart } from './components/WinRateChart'
 import precomputedData from './data/precomputed-results.json'
+
+const allStrategies = [
+  johnsStrategy,
+  conservativeStrategy,
+  greedyStrategy,
+  probabilityStrategy,
+  balancedStrategy,
+  adaptiveStrategy,
+]
 
 function App() {
   const [results, setResults] = useState<SimulationResult | null>(null)
@@ -13,7 +30,23 @@ function App() {
     // Load pre-computed results for the selected player count
     const data = precomputedData[playerCount.toString() as keyof typeof precomputedData]
     if (data) {
-      setResults(data as SimulationResult)
+      // Map the JSON data to include the actual strategy objects
+      const strategies = allStrategies.slice(0, playerCount)
+
+      const result: SimulationResult = {
+        config: {
+          numGames: data.config.numGames,
+          numPlayers: data.config.numPlayers,
+          strategies: strategies,
+        },
+        wins: data.wins,
+        totalPoints: data.totalPoints,
+        averagePoints: data.averagePoints,
+        flip7Count: data.flip7Count,
+        bustRate: data.bustRate,
+      }
+
+      setResults(result)
     }
   }, [playerCount])
 
