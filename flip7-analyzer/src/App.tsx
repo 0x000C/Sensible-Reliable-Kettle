@@ -3,11 +3,11 @@ import './App.css'
 import type { SimulationResult } from './simulation/simulator'
 import {
   johnsStrategy,
-  conservativeStrategy,
-  greedyStrategy,
-  probabilityStrategy,
-  balancedStrategy,
-  adaptiveStrategy,
+  perfectMemoryStrategy,
+  blackjackStrategy,
+  expectedValueStrategy,
+  contextAwareStrategy,
+  aggressiveStrategy,
 } from './strategies'
 import { StrategyInsights } from './components/StrategyInsights'
 import { WinRateChart } from './components/WinRateChart'
@@ -15,11 +15,11 @@ import precomputedData from './data/precomputed-results.json'
 
 const allStrategies = [
   johnsStrategy,
-  conservativeStrategy,
-  greedyStrategy,
-  probabilityStrategy,
-  balancedStrategy,
-  adaptiveStrategy,
+  perfectMemoryStrategy,
+  blackjackStrategy,
+  expectedValueStrategy,
+  contextAwareStrategy,
+  aggressiveStrategy,
 ]
 
 function App() {
